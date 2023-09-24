@@ -2,7 +2,7 @@ I created this project to understand the workings of recommendation systems base
 
 The dataset I have used is https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset, which consists of 50,000 movies and more than 2 Million ratings by various users. The task of this project was to create a recommendation engine capable of recommending new movies to users based on their previous ratings of different films. 
 
-Approach/ Steps:
+**Approach/ Steps:**
 
 Preprocessing the datasets (Movies and Ratings): 
 
@@ -44,8 +44,8 @@ Once we have this user vector, we have an option of what we want to do. We can r
 
 We multiply this user vector of the form (1*100) with each movie present in the movie feature matrix (100*20). This will result in a movie score vector of the form (1*20) * (20*100) = (1*100). These are the corresponding scores of each movie with the user, where a higher score means a greater chance of the user liking this movie. We need to create a mask to disable the already rated movies by the user, and then we return the top n (user-specified, depending on how many items to recommend) movies with the highest scores to the users. 
 
-**Observations: 
-**
+**Observations: **
+
 -> This method faces a cold start problem when the user has no ratings or when a new user is created. 
 
 Solution: We can create a knowledge-based recommendation system. In this method, we explicitly ask the user to directly rate their preference of genres, or ask them to select their favorite movies. 
