@@ -6,7 +6,7 @@ The dataset I have used is https://www.kaggle.com/datasets/rounakbanik/the-movie
 
 Preprocessing the datasets (Movies and Ratings): 
 
-**-> Movies Dataset: **
+**Movies Dataset:**
 
 First, we must decide which attributes to select from the movie dataset to create the movie feature matrix. I have decided to use movie genres as the movie feature attributes. 
 
@@ -16,7 +16,7 @@ For both of the above-mentioned preprocessing steps, we can use SQL using the wh
 
 Next, I converted the genre column/feature into it's one hot encoded form which results in an appropriate movie-feature matrix. 
 
-**-> User Ratings Dataset:** 
+**User Ratings Dataset:** 
 
 After preprocessing the movies dataset, some movies have been dropped based on above mentioned conditions, we need to accordingly drop user ratings from this dataset that contain ratings about the dropped movies. 
 
@@ -40,11 +40,11 @@ Then we proceed to normalize this user vector. Once we have a normalized user ve
 
 Once we have this user vector, we have an option of what we want to do. We can recommend based on content-based or collaborative filtering based on this user vector. 
 
-**Content-based filtering: **
+**Content-based filtering:**
 
 We multiply this user vector of the form (1*100) with each movie present in the movie feature matrix (100*20). This will result in a movie score vector of the form (1*20) * (20*100) = (1*100). These are the corresponding scores of each movie with the user, where a higher score means a greater chance of the user liking this movie. We need to create a mask to disable the already rated movies by the user, and then we return the top n (user-specified, depending on how many items to recommend) movies with the highest scores to the users. 
 
-**Observations: **
+**Observations:**
 
 -> This method faces a cold start problem when the user has no ratings or when a new user is created. 
 
@@ -68,7 +68,7 @@ Advantages and Disadvantages of Content-Based and Collaborative Filtering:
 
 -> This method is independent of the number of users, which makes it highly scalable. 
 
-**Content-Based Disadvantages: **
+**Content-Based Disadvantages:**
 
 -> This method can not enhance the user's interest in other categories/ genres as all the recommendations are based on pre-specified user interests captured by the user vector.
 
