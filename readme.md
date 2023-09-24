@@ -2,7 +2,7 @@ I created this project to understand the workings of recommendation systems base
 
 The dataset I have used is https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset, which consists of 50,000 movies and more than 2 Million ratings by various users. The task of this project was to create a recommendation engine capable of recommending new movies to users based on their previous ratings of different films. 
 
-**Approach/ Steps: **
+Approach/ Steps:
 
 Preprocessing the datasets (Movies and Ratings): 
 
